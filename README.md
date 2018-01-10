@@ -1,2 +1,2 @@
-# introspect
-A productivity monitoring app using Boostnote
+# Introspect
+> A productivity monitoring app using Boostnote
