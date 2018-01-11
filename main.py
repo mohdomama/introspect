@@ -5,6 +5,7 @@ def run():
 	if config.check_status():
 		Productivity = list_handle.get_productivity()
 		print('Percentage, Done, NotDone : ',Productivity)
+		voice.voice_notification(Productivity)
 	
 	else:
 		sys.exit()
@@ -14,6 +15,7 @@ def main():
 	if len(sys.argv) == 1:
 		run()
 	
+	# We are using sys.argv for now. Later we will develop a full CLI for the same.
 	else:
 		if sys.argv[1] == 'clear':
 			config.clear_all_lists()
