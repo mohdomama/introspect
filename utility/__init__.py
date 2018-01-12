@@ -1,1 +1,1 @@
-__all__ = ['config', 'list_handle', 'voice']
+__all__ = ['config', 'list_handle', 'voice', 'notify']
