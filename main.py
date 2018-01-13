@@ -5,8 +5,8 @@ def run():
 	if config.check_status():
 		Productivity = list_handle.get_productivity()
 		print('Percentage, Done, NotDone : ',Productivity)
-		notify.create_notification(Productivity)
 		voice.voice_notification(Productivity)
+	
 	else:
 		sys.exit()
 
