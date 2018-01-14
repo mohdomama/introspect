@@ -2,33 +2,33 @@ import subprocess as s
 
 DataPath = 'data/lists.csv'
 
-def send_notification(name, notification):
-	s.call(['notify-send', name, notification])
+def send_notification(Name, Notification):
+	s.call(['notify-send', Name, Notification])
 
-def parse_name(file_name, file_path):
-	with open(file_path.split('\n')[0]) as File:
-		line_count = 0
-		for line in File:
-			line_count+=1
-			if(line_count==5):
-				heading_line = line
-	name = ""
-	for i in heading_line:
+def parse_name(FileName, FilePath):
+	with open(FilePath.split('\n')[0]) as File:
+		LineCount = 0
+		for Line in File:
+			LineCount+=1
+			if(LineCount==5):
+				HeadingLine = Line
+	Name = ""
+	for i in HeadingLine:
 		if(i.isalnum()):
-			name+=i
-	if(name not in file_name):
-		file_name.append(name)
+			Name+=i
+	if(Name not in FileName):
+		FileName.append(Name)
 
 def get_file_name():
-	file_name = []
+	FileName = []
 	with open(DataPath) as File:
-		for line in File:
-			file_path = line.split(',')[1]
-			parse_name(file_name, file_path)
-	return file_name
+		for Line in File:
+			FilePath = Line.split(',')[1]
+			parse_name(FileName, FilePath)
+	return FileName
 
 def create_notification(Productivity):
-	MessageBody = " Total task done "+str(Productivity[1])+" out of"+ str(Productivity[2])
-	file_name = get_file_name()
-	for name in file_name:
-		send_notification(name, MessageBody)
+	MessageBody = " Total task done "+str(Productivity[1])+" out of "+ str(Productivity[2])
+	FileName = get_file_name()
+	for Name in FileName:
+		send_notification(Name, MessageBody)
