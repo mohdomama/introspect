@@ -10,7 +10,7 @@ def make_message(Productivity):
 	return Message
 
 
-def speak(Message, RelRate = -40, VoiceID = 'english'):
+def speak(Message, RelRate = -20, VoiceID = 'english'):
 	engine = pyttsx3.init()
 	engine.setProperty('voice', VoiceID)
 
